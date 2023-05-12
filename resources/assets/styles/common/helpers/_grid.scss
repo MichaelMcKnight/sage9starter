@@ -25,32 +25,16 @@ $gaps-map: (
 .grid {
   display: grid;
 
-	@each $cols, $template in $cols-map {
+	@each $cols, $value in $cols-map {
 		&.cols-#{$cols} {
-			grid-template-columns: $template;
+			grid-template-columns: $value;
 		}
 
-		@include breakpoints.media-breakpoint-up(md) {
-			&.cols-md-#{$cols} {
-				grid-template-columns: $template;
-			}
-		}
-
-		@include breakpoints.media-breakpoint-up(lg) {
-			&.cols-lg-#{$cols} {
-				grid-template-columns: $template;
-			}
-		}
-
-		@include breakpoints.media-breakpoint-up(xl) {
-			&.cols-xl-#{$cols} {
-				grid-template-columns: $template;
-			}
-		}
-
-		@include breakpoints.media-breakpoint-up(xxl) {
-			&.cols-xxl-#{$cols} {
-				grid-template-columns: $template;
+		@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
+			@include breakpoints.media-breakpoint-up(#{$breakpoint}) {
+				&.cols-#{$breakpoint}-#{$cols} {
+					grid-template-columns: $value;
+				}
 			}
 		}
 	}
@@ -68,59 +52,19 @@ $gaps-map: (
 			row-gap: $value;
 		}
 
-		@include breakpoints.media-breakpoint-up(md) {
-			&.gap-md-#{$gap} {
-				grid-gap: $value;
-			}
+		@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
+			@include breakpoints.media-breakpoint-up(#{$breakpoint}) {
+				&.gap-#{$breakpoint}-#{$gap} {
+					grid-gap: $value;
+				}
 
-			&.col-gap-md-#{$gap} {
-				column-gap: $value;
-			}
+				&.col-gap-#{$breakpoint}-#{$gap} {
+					column-gap: $value;
+				}
 
-			&.row-gap-md-#{$gap} {
-				row-gap: $value;
-			}
-		}
-
-		@include breakpoints.media-breakpoint-up(lg) {
-			&.gap-lg-#{$gap} {
-				grid-gap: $value;
-			}
-
-			&.col-gap-lg-#{$gap} {
-				column-gap: $value;
-			}
-
-			&.row-gap-lg-#{$gap} {
-				row-gap: $value;
-			}
-		}
-
-		@include breakpoints.media-breakpoint-up(xl) {
-			&.gap-xl-#{$gap} {
-				grid-gap: $value;
-			}
-
-			&.col-gap-xl-#{$gap} {
-				column-gap: $value;
-			}
-
-			&.row-gap-xl-#{$gap} {
-				row-gap: $value;
-			}
-		}
-
-		@include breakpoints.media-breakpoint-up(xxl) {
-			&.gap-xxl-#{$gap} {
-				grid-gap: $value;
-			}
-
-			&.col-gap-xxl-#{$gap} {
-				column-gap: $value;
-			}
-
-			&.row-gap-xxl-#{$gap} {
-				row-gap: $value;
+				&.row-gap-#{$breakpoint}-#{$gap} {
+					row-gap: $value;
+				}
 			}
 		}
 	}
