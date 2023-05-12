@@ -1,0 +1,22 @@
+/* stylelint-disable indentation */
+.pagination {
+	margin: 3rem auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+
+	a {
+		border: 2px solid #efeded;
+		border-radius: 0.5rem;
+		font-weight: var(--fw-black);
+		padding: 0.5rem 1rem;
+
+		&.active,
+		&:hover {
+			background-color: var(--clr-primary);
+			border-color: var(--clr-primary);
+			color: var(--clr-white);
+		}
+	}
+}

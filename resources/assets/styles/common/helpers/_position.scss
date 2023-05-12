@@ -1,0 +1,144 @@
+@use "../../utils/breakpoints";
+
+.position-relative {
+	position: relative;
+}
+
+.center-el-absolute,
+.center-el-x-absolute,
+.center-el-y-absolute {
+	position: absolute;
+	z-index: 1;
+}
+
+.center-el-absolute {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.center-el-x-absolute {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.center-el-y-absolute {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@include breakpoints.media-breakpoint-up(md) {
+	.position-relative-md {
+		position: relative;
+	}
+
+	.center-el-absolute-md,
+	.center-el-x-absolute-md,
+	.center-el-y-absolute-md {
+		position: absolute;
+		z-index: 1;
+	}
+
+	.center-el-absolute-md {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.center-el-x-absolute-md {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.center-el-y-absolute-md {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@include breakpoints.media-breakpoint-up(lg) {
+	.position-relative-lg {
+		position: relative;
+	}
+
+	.center-el-absolute-lg,
+	.center-el-x-absolute-lg,
+	.center-el-y-absolute-lg {
+		position: absolute;
+		z-index: 1;
+	}
+
+	.center-el-absolute-lg {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.center-el-x-absolute-lg {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.center-el-y-absolute-lg {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@include breakpoints.media-breakpoint-up(xl) {
+	.position-relative-xl {
+		position: relative;
+	}
+
+	.center-el-absolute-xl,
+	.center-el-x-absolute-xl,
+	.center-el-y-absolute-xl {
+		position: absolute;
+		z-index: 1;
+	}
+
+	.center-el-absolute-xl {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.center-el-x-absolute-xl {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.center-el-y-absolute-xl {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+@include breakpoints.media-breakpoint-up(xxl) {
+	.position-relative-xxl {
+		position: relative;
+	}
+
+	.center-el-absolute-xxl,
+	.center-el-x-absolute-xxl,
+	.center-el-y-absolute-xxl {
+		position: absolute;
+		z-index: 1;
+	}
+
+	.center-el-absolute-xxl {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.center-el-x-absolute-xxl {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.center-el-y-absolute-xxl {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}

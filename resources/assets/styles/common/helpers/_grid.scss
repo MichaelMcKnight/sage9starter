@@ -1,0 +1,127 @@
+@use "../../utils/breakpoints";
+
+$cols-map: (
+  2: 1fr 1fr,
+  3: 1fr 1fr 1fr,
+  4: 1fr 1fr 1fr 1fr,
+	5: 1fr 1fr 1fr 1fr 1fr,
+	6: 1fr 1fr 1fr 1fr 1fr 1fr,
+	7: 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+	8: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+	9: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+	10: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+	11: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+	12: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr,
+);
+
+$gaps-map: (
+	1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem
+);
+
+.grid {
+  display: grid;
+
+	@each $cols, $template in $cols-map {
+		&.cols-#{$cols} {
+			grid-template-columns: $template;
+		}
+
+		@include breakpoints.media-breakpoint-up(md) {
+			&.cols-md-#{$cols} {
+				grid-template-columns: $template;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			&.cols-lg-#{$cols} {
+				grid-template-columns: $template;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xl) {
+			&.cols-xl-#{$cols} {
+				grid-template-columns: $template;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xxl) {
+			&.cols-xxl-#{$cols} {
+				grid-template-columns: $template;
+			}
+		}
+	}
+
+	@each $gap, $value in $gaps-map {
+		&.gap-#{$gap} {
+			grid-gap: $value;
+		}
+
+		&.col-gap-#{$gap} {
+			column-gap: $value;
+		}
+
+		&.row-gap-#{$gap} {
+			row-gap: $value;
+		}
+
+		@include breakpoints.media-breakpoint-up(md) {
+			&.gap-md-#{$gap} {
+				grid-gap: $value;
+			}
+
+			&.col-gap-md-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-md-#{$gap} {
+				row-gap: $value;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			&.gap-lg-#{$gap} {
+				grid-gap: $value;
+			}
+
+			&.col-gap-lg-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-lg-#{$gap} {
+				row-gap: $value;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xl) {
+			&.gap-xl-#{$gap} {
+				grid-gap: $value;
+			}
+
+			&.col-gap-xl-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-xl-#{$gap} {
+				row-gap: $value;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xxl) {
+			&.gap-xxl-#{$gap} {
+				grid-gap: $value;
+			}
+
+			&.col-gap-xxl-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-xxl-#{$gap} {
+				row-gap: $value;
+			}
+		}
+	}
+}

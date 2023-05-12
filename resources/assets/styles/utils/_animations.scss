@@ -1,0 +1,93 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin fadeIn($speed: 1.5s, $delay: 0) {
+  opacity: 0;
+  transform: translateY(-0.2em);
+  animation-duration: $speed;
+  animation-timing-function: ease;
+  animation-delay: $delay;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: fade-in;
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin fadeOut($speed: 1.5s, $delay: 0) {
+  opacity: 0;
+  transform: translateY(-0.2em);
+  animation-duration: $speed;
+  animation-timing-function: ease;
+  animation-delay: $delay;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: fade-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateX(0);
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: fade-in;
+}
+
+.fade-out {
+  opacity: 1;
+  transform: translateX(5rem);
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: fade-out;
+
+  &__no-slide {
+    transform: translateX(0);
+  }
+}
+
+.show {
+  display: block !important;
+
+  &__grid {
+    display: grid !important;
+  }
+}
+
+.hide {
+  display: none !important;
+}

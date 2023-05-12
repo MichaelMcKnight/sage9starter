@@ -1,0 +1,114 @@
+@use "../../utils/breakpoints";
+
+$justify: (
+	start: start,
+	center: center,
+	end: end,
+	space-between: space-between,
+	space-around: space-around,
+	space-evenly: space-evenly,
+	stretch: stretch,
+);
+
+$align: (
+	start: start,
+	center: center,
+	end: end,
+	stretch: stretch,
+);
+
+$text-align: (
+	left: left,
+	center: center,
+	right: right,
+);
+
+@each $class, $value in $justify {
+	.justify-content-#{$class} {
+		justify-content: $value;
+	}
+
+	@include breakpoints.media-breakpoint-up(md) {
+		.justify-content-md-#{$class} {
+			justify-content: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(lg) {
+		.justify-content-lg-#{$class} {
+			justify-content: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(xl) {
+		.justify-content-xl-#{$class} {
+			justify-content: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(xxl) {
+		.justify-content-xxl-#{$class} {
+			justify-content: $value;
+		}
+	}
+}
+
+@each $class, $value in $align {
+	.align-items-#{$class} {
+		align-items: $value;
+	}
+
+	@include breakpoints.media-breakpoint-up(md) {
+		.align-items-md-#{$class} {
+			align-items: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(lg) {
+		.align-items-lg-#{$class} {
+			align-items: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(xl) {
+		.align-items-xl-#{$class} {
+			align-items: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(xxl) {
+		.align-items-xxl-#{$class} {
+			align-items: $value;
+		}
+	}
+}
+
+@each $class, $value in $align {
+	.text-align-#{$class} {
+		text-align: $value;
+	}
+
+	@include breakpoints.media-breakpoint-up(md) {
+		.text-align-md-#{$class} {
+			text-align: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(lg) {
+		.text-align-lg-#{$class} {
+			text-align: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(xl) {
+		.text-align-xl-#{$class} {
+			text-align: $value;
+		}
+	}
+
+	@include breakpoints.media-breakpoint-up(xxl) {
+		.text-align-xxl-#{$class} {
+			text-align: $value;
+		}
+	}
+}

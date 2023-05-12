@@ -1,0 +1,15 @@
+@use "../utils/breakpoints";
+
+.site-header {
+	.menu {
+		@include breakpoints.media-breakpoint-down(lg) {
+			display: none;
+		}
+	}
+
+	.hamburger {
+		@include breakpoints.media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+}

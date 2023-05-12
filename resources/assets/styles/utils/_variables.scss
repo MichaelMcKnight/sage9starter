@@ -1,0 +1,79 @@
+$theme-colors: (
+	"primary": #15bef0,
+	"secondary": #495965,
+	"dark-grey": #242424,
+	"light-grey": #ccc,
+	"med-grey": #dbdee0,
+	"black": #000,
+	"white": #fff,
+);
+
+/**
+* https://utopia.fyi/type/calculator/
+* Select min & max font sizes, type scale doesn't matter
+* Min Viewport: 375px
+* Max Viewport: 1440px
+* Check "use clamp" and copy value from --step-0
+*/
+$font-sizes: (
+	// 7-8px
+	"8": clamp(0.44rem, calc(0.42rem + 0.11vw), 0.5rem),
+	// 9-10px
+	"10": clamp(0.56rem, calc(0.54rem + 0.11vw), 0.63rem),
+	// 10-11px
+	"11": clamp(0.63rem, calc(0.6rem + 0.11vw), 0.69rem),
+	// 11-12px
+	"12": clamp(0.69rem, calc(0.67rem + 0.11vw), 0.75rem),
+	// 12-13px
+	"13": clamp(0.75rem, calc(0.73rem + 0.09vw), 0.81rem),
+	// 13-14px
+	"14": clamp(0.81rem, calc(0.79rem + 0.09vw), 0.88rem),
+	// 14-15px
+	"15": clamp(0.88rem, calc(0.85rem + 0.09vw), 0.94rem),
+	// 15-16px
+	"16": clamp(0.94rem, calc(0.92rem + 0.09vw), 1rem),
+	// 15-17px
+	"17": clamp(0.94rem, calc(0.89rem + 0.19vw), 1.06rem),
+	// 16-18px
+	"18": clamp(1rem, calc(0.96rem + 0.19vw), 1.13rem),
+	// 17-19px
+	"19": clamp(1.06rem, calc(1.02rem + 0.19vw), 1.19rem),
+	// 18-20px
+	"20": clamp(1.13rem, calc(1.08rem + 0.19vw), 1.25rem),
+	// 20-22px
+	"22": clamp(1.25rem, calc(1.21rem + 0.19vw), 1.38rem),
+	// 21-24px
+	"24": clamp(1.31rem, calc(1.25rem + 0.28vw), 1.5rem),
+	// 22-25px
+	"25": clamp(1.38rem, calc(1.31rem + 0.28vw), 1.56rem),
+	// 23-26px
+	"26": clamp(1.44rem, calc(1.37rem + 0.28vw), 1.63rem),
+	// 25-28px
+	"28": clamp(1.56rem, calc(1.5rem + 0.28vw), 1.75rem),
+	// 28-30px
+	"30": clamp(1.75rem, calc(1.71rem + 0.22vw), 1.88rem),
+	// 28-32px
+	"32": clamp(1.75rem, calc(1.66rem + 0.38vw), 2rem),
+	// 30-34px
+	"34": clamp(1.88rem, calc(1.79rem + 0.43vw), 2.13rem),
+	// 32-40px
+	"40": clamp(2rem, calc(1.8rem + 0.98vw), 2.5rem),
+	// 38-42px
+	"42": clamp(2.38rem, calc(2.29rem + 0.43vw), 2.63rem),
+	// 40-50px
+	"50": clamp(2.19rem, calc(1.86rem + 1.41vw), 3.13rem),
+	// 45-52px
+	"52": clamp(2.63rem, calc(2.41rem + 1.09vw), 3.25rem),
+	// 45-70px
+	"70": clamp(2.75rem, calc(2.18rem + 2.44vw), 4.38rem)
+);
+
+$grid-breakpoints: (
+	xs: 0, // 0px
+	sm: 36rem, // 576px
+	sm-md: 42rem, // 672px
+	md: 48rem, // 768px
+	lg: 62rem, // 992px
+	xl: 75rem, // 1200px
+	xxl: 92rem, // 1472px
+) !default;

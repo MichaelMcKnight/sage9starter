@@ -1,0 +1,228 @@
+@use "../../utils/breakpoints";
+
+$cols-map: (
+	auto: auto,
+	1: 100%,
+  2: 50%,
+  3: 33.33%,
+  4: 25%,
+	5: 20%,
+	6: 16.67%,
+	7: 14.28%,
+	8: 12.55%,
+	9: 11.1%,
+	10: 10%,
+	11: 9.09%,
+	12: 8.3%
+);
+
+$gaps-map: (
+	1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem
+);
+
+.flex {
+  display: flex;
+	flex-wrap: wrap;
+
+	> * {
+		width: 100%;
+	}
+
+	@each $col, $value in $cols-map {
+		&.cols-#{$col} {
+			@each $gap, $gap-value in $gaps-map {
+				&.gap-#{$gap},
+				&.gap-md#{$gap},
+				&.gap-lg#{$gap},
+				&.gap-xl#{$gap},
+				&.gap-xxl#{$gap} {
+					> * {
+						width: calc(#{$value} - #{$gap-value});
+					}
+				}
+			}
+
+			> * {
+				width: $value;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(md) {
+			&.cols-md-#{$col} {
+				@each $gap, $gap-value in $gaps-map {
+					&.gap-#{$gap},
+					&.gap-md-#{$gap},
+					&.gap-lg-#{$gap},
+					&.gap-xl-#{$gap},
+					&.gap-xxl-#{$gap},
+					&.col-gap-#{$gap},
+					&.col-gap-md-#{$gap},
+					&.col-gap-lg-#{$gap},
+					&.col-gap-xl-#{$gap},
+					&.col-gap-xxl-#{$gap} {
+						> * {
+							width: calc(#{$value} - #{$gap-value});
+						}
+					}
+				}
+
+				> * {
+					width: $value;
+				}
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			&.cols-lg-#{$col} {
+				@each $gap, $gap-value in $gaps-map {
+					&.gap-#{$gap},
+					&.gap-md-#{$gap},
+					&.gap-lg-#{$gap},
+					&.gap-xl-#{$gap},
+					&.gap-xxl-#{$gap},
+					&.col-gap-#{$gap},
+					&.col-gap-md-#{$gap},
+					&.col-gap-lg-#{$gap},
+					&.col-gap-xl-#{$gap},
+					&.col-gap-xxl-#{$gap} {
+						> * {
+							width: calc(#{$value} - #{$gap-value});
+						}
+					}
+				}
+
+				> * {
+					width: $value;
+				}
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xl) {
+			&.cols-xl-#{$col} {
+				@each $gap, $gap-value in $gaps-map {
+					&.gap-#{$gap},
+					&.gap-md-#{$gap},
+					&.gap-lg-#{$gap},
+					&.gap-xl-#{$gap},
+					&.gap-xxl-#{$gap},
+					&.col-gap-#{$gap},
+					&.col-gap-md-#{$gap},
+					&.col-gap-lg-#{$gap},
+					&.col-gap-xl-#{$gap},
+					&.col-gap-xxl-#{$gap} {
+						> * {
+							width: calc(#{$value} - #{$gap-value});
+						}
+					}
+				}
+
+				> * {
+					width: $value;
+				}
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xxl) {
+			&.cols-xxl-#{$col} {
+				@each $gap, $gap-value in $gaps-map {
+					&.gap-#{$gap},
+					&.gap-md-#{$gap},
+					&.gap-lg-#{$gap},
+					&.gap-xl-#{$gap},
+					&.gap-xxl-#{$gap},
+					&.col-gap-#{$gap},
+					&.col-gap-md-#{$gap},
+					&.col-gap-lg-#{$gap},
+					&.col-gap-xl-#{$gap},
+					&.col-gap-xxl-#{$gap} {
+						> * {
+							width: calc(#{$value} - #{$gap-value});
+						}
+					}
+				}
+
+				> * {
+					width: $value;
+				}
+			}
+		}
+	}
+
+	@each $gap, $value in $gaps-map {
+		&.gap-#{$gap} {
+			gap: $value;
+		}
+
+		&.col-gap-#{$gap} {
+			column-gap: $value;
+		}
+
+		&.row-gap-#{$gap} {
+			row-gap: $value;
+		}
+
+		@include breakpoints.media-breakpoint-up(md) {
+			&.gap-md-#{$gap} {
+				gap: $value;
+			}
+
+			&.col-gap-md-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-md-#{$gap} {
+				row-gap: $value;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			&.gap-lg-#{$gap} {
+				gap: $value;
+			}
+
+			&.col-gap-lg-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-lg-#{$gap} {
+				row-gap: $value;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xl) {
+			&.gap-xl-#{$gap} {
+				gap: $value;
+			}
+
+			&.col-gap-xl-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-xl-#{$gap} {
+				row-gap: $value;
+			}
+		}
+
+		@include breakpoints.media-breakpoint-up(xxl) {
+			&.gap-xxl-#{$gap} {
+				gap: $value;
+			}
+
+			&.col-gap-xxl-#{$gap} {
+				column-gap: $value;
+			}
+
+			&.row-gap-xxl-#{$gap} {
+				row-gap: $value;
+			}
+		}
+	}
+}
+
+.no-wrap {
+	flex-wrap: nowrap;
+}

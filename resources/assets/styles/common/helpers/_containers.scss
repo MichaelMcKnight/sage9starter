@@ -1,0 +1,22 @@
+@use "../../utils/breakpoints";
+
+/* change these as needed for mockups */
+$container-sizes: (
+	sm: 50rem,
+	md: 70rem,
+	lg: 85rem,
+	xl: 90rem,
+	xxl: 100rem
+);
+
+.container {
+	margin-inline: auto;
+	width: min(100% - var(--spacer) * 2, var(--container-max));
+}
+
+@each $size, $value in $container-sizes {
+	.container-#{$size} {
+		max-width: $value;
+		margin-inline: auto;
+	}
+}

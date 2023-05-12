@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "./variables";
+// see variables.scss
+// see editor-color-palette in app/setup.php
+@each $name, $color in variables.$theme-colors {
+  .has-#{$name}-color {
+    color: $color;
+  }
+
+  .has-#{$name}-background-color {
+    background-color: $color;
+  }
+}

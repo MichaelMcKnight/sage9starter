@@ -1,0 +1,67 @@
+/* add icomoon project via setup.php */
+$icons: (
+);
+
+@function get-icon($icon) {
+  @if map-has-key($icons, $icon) {
+    $icon: map-get($icons, $icon);
+
+    @return $icon;
+  }
+
+  @warn "The requested icon '#{$icon}' was not found.";
+}
+
+@mixin icon($icon: "") {
+  content: get-icon($icon);
+  color: inherit;
+  font-family: "icomoon", sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  margin-right: 0.5rem;
+  speak: none;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@each $name, $content in $icons {
+  .has-icon-#{$name} {
+    position: relative;
+    margin-left: 1rem;
+
+    &::before {
+      @include icon(#{$name});
+
+      left: -1rem;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      text-decoration: none;
+      position: absolute;
+    }
+  }
+}
+
+@each $name, $content in $icons {
+  .right-icon-#{$name} {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      @include icon(#{$name});
+
+      font-size: 0.6rem;
+      right: -1rem;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      text-decoration: none;
+      position: absolute;
+    }
+  }
+}

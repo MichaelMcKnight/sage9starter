@@ -1,0 +1,146 @@
+@use "sass:map";
+@use "../utils/variables";
+@use "../utils/breakpoints";
+
+:root,
+.is-root-container {
+	/**
+	 * Colors
+	 */
+	@each $name, $color in variables.$theme-colors {
+		--clr-#{$name}: #{$color};
+	}
+
+	--clr-hamburger: var(--clr-white);
+	--clr-link: var(--clr-primary);
+	--clr-link-hover: var(--clr-primary);
+
+	/**
+	 * Typography
+	 * https://utopia.fyi/type/calculator/ 375px - 1440px
+	 */
+	@each $name, $size in variables.$font-sizes {
+		--fs-#{$name}: #{$size};
+	}
+
+	--ff-primary: "Roboto", sans-serif;
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-semi-bold: 600;
+	--fw-bold: 700;
+	--fw-black: 900;
+
+	/**
+	 * Layout
+	 */
+	--container-max: #{map-get(variables.$grid-breakpoints, "xxl")};
+	--spacer: 1rem;
+
+	/**
+	 * Misc
+	 */
+	--box-shadow: rgb(66 66 66 / 5%) 0 0.125rem 0.75rem;
+	--transition: 0.2s ease;
+}
+
+#app {
+	background-color: var(--clr-white);
+
+	@include breakpoints.media-breakpoint-down(md) {
+		overflow: hidden;
+	}
+}
+
+* {
+	&:focus-visible {
+		outline-color: var(--clr-primary);
+		outline-offset: 0.25em;
+	}
+}
+
+html {
+	height: 100%;
+	font-size: 100%;
+	scroll-behavior: smooth;
+}
+
+body:not(.wp-admin) {
+	color: var(--clr-dark-grey);
+	font-family: var(--ff-primary);
+	font-size: var(--fs-18);
+	line-height: 1.5;
+}
+
+h1,
+h2 {
+	margin-bottom: 1rem;
+	font-weight: var(--fw-black);
+}
+
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0.25rem;
+	font-weight: var(--fw-bold);
+}
+
+h1 {
+	font-size: var(--fs-52);
+}
+
+h2 {
+	font-size: var(--fs-34);
+}
+
+h3 {
+	font-size: var(--fs-18);
+}
+
+h4 {
+	font-size: var(--fs-17);
+}
+
+h5 {
+	font-size: var(--fs-16);
+}
+
+h6 {
+	font-size: var(--fs-14);
+}
+
+p {
+	margin-bottom: 1rem;
+	line-height: 2;
+	font-size: var(--fs-18);
+}
+
+small {
+	font-size: var(--fs-15);
+}
+
+address {
+	font-style: normal;
+}
+
+img {
+	height: auto;
+	margin: 1rem 0;
+}
+
+section:not(.splide) {
+	padding: 3rem 0;
+
+	@include breakpoints.media-breakpoint-up(lg) {
+		padding: 5rem 0;
+	}
+
+	&.half-padding {
+		padding: 1.5rem 0;
+
+		@include breakpoints.media-breakpoint-up(lg) {
+			padding: 2.5rem 0;
+		}
+	}
+}

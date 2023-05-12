@@ -1,0 +1,65 @@
+@use "../utils/breakpoints";
+
+/**
+ * WordPress Generated Classes
+ * @see http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ */
+
+/** Media alignment */
+.alignnone {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+@include breakpoints.media-breakpoint-up(sm-md) {
+  .alignleft {
+    float: left;
+    margin-right: var(--spacer);
+  }
+
+  .alignright {
+    float: right;
+    margin-left: var(--spacer);
+  }
+}
+
+.wp-block-image {
+  margin: 0;
+
+  figure {
+    margin-inline: auto;
+  }
+
+  figcaption {
+    margin: calc(var(--spacer) / 2) 0 0;
+  }
+
+  .alignleft,
+  .alignright {
+    float: none;
+    margin: 0 0 calc(var(--spacer) * 2);
+  }
+
+  .aligncenter {
+    margin: var(--spacer) auto;
+  }
+
+  @include breakpoints.media-breakpoint-up(md) {
+    .alignleft {
+      float: left;
+      margin: 0 calc(var(--spacer) * 1.5) calc(var(--spacer) * 1.5) 0;
+    }
+
+    .alignright {
+      float: right;
+      margin: 0 0 calc(var(--spacer) * 1.5) calc(var(--spacer) * 1.5);
+    }
+  }
+}
+
+.wp-block-columns {
+  margin-bottom: 0;
+  row-gap: var(--spacer);
+}

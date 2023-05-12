@@ -1,0 +1,30 @@
+.accordion {
+	&__panel {
+		border: 2px solid var(--clr-med-grey);
+
+		&.active,
+		&:hover {
+			border-color: var(--clr-primary);
+		}
+
+		&__button,
+		&__content {
+			padding: 1rem;
+		}
+
+		&__button {
+			width: 100%;
+			text-align: left;
+			background-color: none;
+			border: none;
+			font-weight: var(--fw-bold);
+			font-size: var(--fs-24);
+			color: var(--clr-primary);
+			cursor: pointer;
+		}
+
+		&__content {
+			display: none;
+		}
+	}
+}
