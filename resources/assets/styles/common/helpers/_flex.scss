@@ -28,6 +28,14 @@ $gaps-map: (
   display: flex;
 	flex-wrap: wrap;
 
+	&.no-wrap {
+		flex-wrap: nowrap;
+	}
+
+	&.reverse {
+		flex-wrap: wrap-reverse;
+	}
+
 	> * {
 		width: 100%;
 	}
@@ -91,8 +99,4 @@ $gaps-map: (
 			row-gap: $value;
 		}
 	}
-}
-
-.no-wrap {
-	flex-wrap: nowrap;
 }

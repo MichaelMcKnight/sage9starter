@@ -28,27 +28,11 @@ $text-align: (
 		justify-content: $value;
 	}
 
-	@include breakpoints.media-breakpoint-up(md) {
-		.justify-content-md-#{$class} {
-			justify-content: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(lg) {
-		.justify-content-lg-#{$class} {
-			justify-content: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(xl) {
-		.justify-content-xl-#{$class} {
-			justify-content: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(xxl) {
-		.justify-content-xxl-#{$class} {
-			justify-content: $value;
+	@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
+		@include breakpoints.media-breakpoint-up($breakpoint) {
+			.justify-content-#{$breakpoint}-#{$class} {
+				justify-content: $value;
+			}
 		}
 	}
 }
@@ -58,27 +42,11 @@ $text-align: (
 		align-items: $value;
 	}
 
-	@include breakpoints.media-breakpoint-up(md) {
-		.align-items-md-#{$class} {
-			align-items: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(lg) {
-		.align-items-lg-#{$class} {
-			align-items: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(xl) {
-		.align-items-xl-#{$class} {
-			align-items: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(xxl) {
-		.align-items-xxl-#{$class} {
-			align-items: $value;
+	@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
+		@include breakpoints.media-breakpoint-up($breakpoint) {
+			.align-items-#{$breakpoint}-#{$class} {
+				align-items: $value;
+			}
 		}
 	}
 }
@@ -88,27 +56,11 @@ $text-align: (
 		text-align: $value;
 	}
 
-	@include breakpoints.media-breakpoint-up(md) {
-		.text-align-md-#{$class} {
-			text-align: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(lg) {
-		.text-align-lg-#{$class} {
-			text-align: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(xl) {
-		.text-align-xl-#{$class} {
-			text-align: $value;
-		}
-	}
-
-	@include breakpoints.media-breakpoint-up(xxl) {
-		.text-align-xxl-#{$class} {
-			text-align: $value;
+	@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
+		@include breakpoints.media-breakpoint-up($breakpoint) {
+			.text-align-#{$breakpoint}-#{$class} {
+				text-align: $value;
+			}
 		}
 	}
 }
