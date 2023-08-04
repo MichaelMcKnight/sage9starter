@@ -1,102 +1,298 @@
 @use "../../utils/breakpoints";
 
-$cols-map: (
-	auto: auto,
-	1: 100%,
-  2: 50%,
-  3: 33.33%,
-  4: 25%,
-	5: 20%,
-	6: 16.67%,
-	7: 14.28%,
-	8: 12.55%,
-	9: 11.1%,
-	10: 10%,
-	11: 9.09%,
-	12: 8.3%
-);
-
-$gaps-map: (
-	1: 1rem,
-  2: 2rem,
-  3: 3rem,
-  4: 4rem,
-  5: 5rem
-);
-
 .flex {
   display: flex;
 	flex-wrap: wrap;
 
-	&.no-wrap {
-		flex-wrap: nowrap;
-	}
-
-	&.reverse {
-		flex-wrap: wrap-reverse;
-	}
-
 	> * {
 		width: 100%;
 	}
+}
 
-	@each $cols, $value in $cols-map {
-		&.cols-#{$cols} {
-			@each $gap, $gap-value in $gaps-map {
-				&.gap-#{$gap} {
-					> * {
-						width: calc(#{$value} - #{$gap-value});
-					}
-				}
+.flex-col {
+  flex-direction: column;
+}
 
-				&.col-gap-#{$gap} {
-					> * {
-						width: calc(#{$value} - #{$gap-value});
-					}
-				}
-			}
+.flex-row {
+  flex-direction: row;
+}
 
-			> * {
-				width: $value;
-			}
-		}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
 
-		@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
-			@include breakpoints.media-breakpoint-up($breakpoint) {
-				&.cols-#{$breakpoint}-#{$cols} {
-					@each $gap, $gap-value in $gaps-map {
-						&.gap-#{$gap} {
-							> * {
-								width: calc(#{$value} - #{$gap-value});
-							}
-						}
+.no-wrap {
+	flex-wrap: nowrap;
+}
 
-						&.col-gap-#{$gap} {
-							> * {
-								width: calc(#{$value} - #{$gap-value});
-							}
-						}
-					}
+.space-between {
+  justify-content: space-between;
+}
 
-					> * {
-						width: $value;
-					}
-				}
-			}
-		}
+.flex.cols-auto > * {
+	width: auto;
+}
+
+.flex.cols-1 > * {
+  width: 100%;
+}
+
+.flex.cols-2 > * {
+  width: 50%;
+}
+
+.flex.cols-3 > * {
+  width: 33.333%;
+}
+
+.flex.cols-4 > * {
+  width: 25%;
+}
+
+.flex.cols-5 > * {
+  width: 20%;
+}
+
+.flex.cols-6 > * {
+  width: 16.666%;
+}
+
+.flex.cols-7 > * {
+  width: 14.285%;
+}
+
+.flex.cols-8 > * {
+  width: 12.5%;
+}
+
+.flex.cols-9 > * {
+  width: 11.111%;
+}
+
+.flex.cols-10 > * {
+  width: 10%;
+}
+
+.flex.cols-11 > * {
+  width: 9.0909%;
+}
+
+.flex.cols-12 > * {
+  width: 8.3333%;
+}
+
+@include breakpoints.media-breakpoint-up(md) {
+	.flex.cols-md-auto > * {
+		width: auto;
 	}
 
-	@each $gap, $value in $gaps-map {
-		&.gap-#{$gap} {
-			gap: $value;
-		}
-
-		&.col-gap-#{$gap} {
-			column-gap: $value;
-		}
-
-		&.row-gap-#{$gap} {
-			row-gap: $value;
-		}
+	.flex.cols-md-1 > * {
+		width: 100%;
 	}
+
+	.flex.cols-md-2 > * {
+		width: 50%;
+	}
+
+	.flex.cols-md-3 > * {
+		width: 33.333%;
+	}
+
+	.flex.cols-md-4 > * {
+		width: 25%;
+	}
+
+	.flex.cols-md-5 > * {
+		width: 20%;
+	}
+
+	.flex.cols-md-6 > * {
+		width: 16.666%;
+	}
+
+	.flex.cols-md-7 > * {
+		width: 14.285%;
+	}
+
+	.flex.cols-md-8 > * {
+		width: 12.5%;
+	}
+
+	.flex.cols-md-9 > * {
+		width: 11.111%;
+	}
+
+	.flex.cols-md-10 > * {
+		width: 10%;
+	}
+
+	.flex.cols-md-11 > * {
+		width: 9.0909%;
+	}
+
+	.flex.cols-md-12 > * {
+		width: 8.3333%;
+	}
+}
+
+@include breakpoints.media-breakpoint-up(lg) {
+	.flex.cols-lg-auto > * {
+		width: auto;
+	}
+
+  .flex.cols-lg-1 > * {
+    width: 100%;
+  }
+
+  .flex.cols-lg-2 > * {
+    width: 50%;
+  }
+
+  .flex.cols-lg-3 > * {
+    width: 33.333%;
+  }
+
+  .flex.cols-lg-4 > * {
+    width: 25%;
+  }
+
+  .flex.cols-lg-5 > * {
+    width: 20%;
+  }
+
+  .flex.cols-lg-6 > * {
+    width: 16.666%;
+  }
+
+  .flex.cols-lg-7 > * {
+    width: 14.285%;
+  }
+
+  .flex.cols-lg-8 > * {
+    width: 12.5%;
+  }
+
+  .flex.cols-lg-9 > * {
+    width: 11.111%;
+  }
+
+  .flex.cols-lg-10 > * {
+    width: 10%;
+  }
+
+  .flex.cols-lg-11 > * {
+    width: 9.0909%;
+  }
+
+  .flex.cols-lg-12 > * {
+    width: 8.3333%;
+  }
+}
+
+@include breakpoints.media-breakpoint-up(xl) {
+	.flex.cols-xl-auto > * {
+		width: auto;
+	}
+
+  .flex.cols-xl-1 > * {
+    width: 100%;
+  }
+
+  .flex.cols-xl-2 > * {
+    width: 50%;
+  }
+
+  .flex.cols-xl-3 > * {
+    width: 33.333%;
+  }
+
+  .flex.cols-xl-4 > * {
+    width: 25%;
+  }
+
+  .flex.cols-xl-5 > * {
+    width: 20%;
+  }
+
+  .flex.cols-xl-6 > * {
+    width: 16.666%;
+  }
+
+  .flex.cols-xl-7 > * {
+    width: 14.285%;
+  }
+
+  .flex.cols-xl-8 > * {
+    width: 12.5%;
+  }
+
+  .flex.cols-xl-9 > * {
+    width: 11.111%;
+  }
+
+  .flex.cols-xl-10 > * {
+    width: 10%;
+  }
+
+  .flex.cols-xl-11 > * {
+    width: 9.0909%;
+  }
+
+  .flex.cols-xl-12 > * {
+    width: 8.3333%;
+  }
+}
+
+@include breakpoints.media-breakpoint-up(xxl) {
+	.flex.cols-xxl-auto > * {
+		width: auto;
+	}
+
+  .flex.cols-xxl-1 > * {
+    width: 100%;
+  }
+
+  .flex.cols-xxl-2 > * {
+    width: 50%;
+  }
+
+  .flex.cols-xxl-3 > * {
+    width: 33.333%;
+  }
+
+  .flex.cols-xxl-4 > * {
+    width: 25%;
+  }
+
+  .flex.cols-xxl-5 > * {
+    width: 20%;
+  }
+
+  .flex.cols-xxl-6 > * {
+    width: 16.666%;
+  }
+
+  .flex.cols-xxl-7 > * {
+    width: 14.285%;
+  }
+
+  .flex.cols-xxl-8 > * {
+    width: 12.5%;
+  }
+
+  .flex.cols-xxl-9 > * {
+    width: 11.111%;
+  }
+
+  .flex.cols-xxl-10 > * {
+    width: 10%;
+  }
+
+  .flex.cols-xxl-11 > * {
+    width: 9.0909%;
+  }
+
+  .flex.cols-xxl-12 > * {
+    width: 8.3333%;
+  }
 }

@@ -1,66 +1,289 @@
 @use "../../utils/breakpoints";
 
-$justify: (
-	start: start,
-	center: center,
-	end: end,
-	space-between: space-between,
-	space-around: space-around,
-	space-evenly: space-evenly,
-	stretch: stretch,
-);
+.jsutify-content-start {
+	justify-content: start;
+}
 
-$align: (
-	start: start,
-	center: center,
-	end: end,
-	stretch: stretch,
-);
+.justify-content-center {
+	justify-content: center;
+}
 
-$text-align: (
-	left: left,
-	center: center,
-	right: right,
-);
+.jsutify-content-end {
+	justify-content: end;
+}
 
-@each $class, $value in $justify {
-	.justify-content-#{$class} {
-		justify-content: $value;
+.justify-content-space-around {
+	justify-content: space-around;
+}
+
+.justify-content-space-between {
+	justify-content: space-between;
+}
+
+.jsutify-content-space-evenly {
+	justify-content: space-evenly;
+}
+
+.justify-content-stretch {
+	justify-content: stretch;
+}
+
+.align-items-start {
+	align-items: start;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.align-items-end {
+	align-items: end;
+}
+
+.align-items-stretch {
+	align-items: stretch;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+@include breakpoints.media-breakpoint-up(md) {
+	.jsutify-content-md-start {
+		justify-content: start;
 	}
 
-	@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
-		@include breakpoints.media-breakpoint-up($breakpoint) {
-			.justify-content-#{$breakpoint}-#{$class} {
-				justify-content: $value;
-			}
-		}
+	.justify-content-md-center {
+		justify-content: center;
+	}
+
+	.jsutify-content-md-end {
+		justify-content: end;
+	}
+
+	.justify-content-md-space-around {
+		justify-content: space-around;
+	}
+
+	.justify-content-md-space-between {
+		justify-content: space-between;
+	}
+
+	.jsutify-content-md-space-evenly {
+		justify-content: space-evenly;
+	}
+
+	.justify-content-md-stretch {
+		justify-content: stretch;
+	}
+
+	.align-items-md-start {
+		align-items: start;
+	}
+
+	.align-items-md-center {
+		align-items: center;
+	}
+
+	.align-items-md-end {
+		align-items: end;
+	}
+
+	.align-items-md-stretch {
+		align-items: stretch;
+	}
+
+	.text-align-md-left {
+		text-align: left;
+	}
+
+	.text-align-md-center {
+		text-align: center;
+	}
+
+	.text-align-md-right {
+		text-align: right;
 	}
 }
 
-@each $class, $value in $align {
-	.align-items-#{$class} {
-		align-items: $value;
+@include breakpoints.media-breakpoint-up(lg) {
+	.jsutify-content-lg-start {
+		justify-content: start;
 	}
 
-	@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
-		@include breakpoints.media-breakpoint-up($breakpoint) {
-			.align-items-#{$breakpoint}-#{$class} {
-				align-items: $value;
-			}
-		}
+	.justify-content-lg-center {
+		justify-content: center;
+	}
+
+	.jsutify-content-lg-end {
+		justify-content: end;
+	}
+
+	.justify-content-lg-space-around {
+		justify-content: space-around;
+	}
+
+	.justify-content-lg-space-between {
+		justify-content: space-between;
+	}
+
+	.jsutify-content-lg-space-evenly {
+		justify-content: space-evenly;
+	}
+
+	.justify-content-lg-stretch {
+		justify-content: stretch;
+	}
+
+	.align-items-lg-start {
+		align-items: start;
+	}
+
+	.align-items-lg-center {
+		align-items: center;
+	}
+
+	.align-items-lg-end {
+		align-items: end;
+	}
+
+	.align-items-lg-stretch {
+		align-items: stretch;
+	}
+
+	.text-align-lg-left {
+		text-align: left;
+	}
+
+	.text-align-lg-center {
+		text-align: center;
+	}
+
+	.text-align-lg-right {
+		text-align: right;
 	}
 }
 
-@each $class, $value in $align {
-	.text-align-#{$class} {
-		text-align: $value;
+@include breakpoints.media-breakpoint-up(xl) {
+	.jsutify-content-xl-start {
+		justify-content: start;
 	}
 
-	@each $breakpoint, $breakpoint-value in breakpoints.$breakpoint-sizes {
-		@include breakpoints.media-breakpoint-up($breakpoint) {
-			.text-align-#{$breakpoint}-#{$class} {
-				text-align: $value;
-			}
-		}
+	.justify-content-xl-center {
+		justify-content: center;
+	}
+
+	.jsutify-content-xl-end {
+		justify-content: end;
+	}
+
+	.justify-content-xl-space-around {
+		justify-content: space-around;
+	}
+
+	.justify-content-xl-space-between {
+		justify-content: space-between;
+	}
+
+	.jsutify-content-xl-space-evenly {
+		justify-content: space-evenly;
+	}
+
+	.justify-content-xl-stretch {
+		justify-content: stretch;
+	}
+
+	.align-items-xl-start {
+		align-items: start;
+	}
+
+	.align-items-xl-center {
+		align-items: center;
+	}
+
+	.align-items-xl-end {
+		align-items: end;
+	}
+
+	.align-items-xl-stretch {
+		align-items: stretch;
+	}
+
+	.text-align-xl-left {
+		text-align: left;
+	}
+
+	.text-align-xl-center {
+		text-align: center;
+	}
+
+	.text-align-xl-right {
+		text-align: right;
+	}
+}
+
+@include breakpoints.media-breakpoint-up(xxl) {
+	.jsutify-content-xxl-start {
+		justify-content: start;
+	}
+
+	.justify-content-xxl-center {
+		justify-content: center;
+	}
+
+	.jsutify-content-xxl-end {
+		justify-content: end;
+	}
+
+	.justify-content-xxl-space-around {
+		justify-content: space-around;
+	}
+
+	.justify-content-xxl-space-between {
+		justify-content: space-between;
+	}
+
+	.jsutify-content-xxl-space-evenly {
+		justify-content: space-evenly;
+	}
+
+	.justify-content-xxl-stretch {
+		justify-content: stretch;
+	}
+
+	.align-items-xxl-start {
+		align-items: start;
+	}
+
+	.align-items-xxl-center {
+		align-items: center;
+	}
+
+	.align-items-xxl-end {
+		align-items: end;
+	}
+
+	.align-items-xxl-stretch {
+		align-items: stretch;
+	}
+
+	.text-align-xxl-left {
+		text-align: left;
+	}
+
+	.text-align-xxl-center {
+		text-align: center;
+	}
+
+	.text-align-xxl-right {
+		text-align: right;
 	}
 }
